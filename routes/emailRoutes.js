@@ -79,22 +79,7 @@ router.get("/email-events/:id", async (req, res) => {
 
 router.post("/register", register); //  registration route
 
-// Route for creating a new webhook
-router.post("/webhooks", async (req, res) => {
-  const { name, status } = req.body;
 
-  try {
-    const newWebhook = new Webhook({
-      name,
-      status,
-    });
-    const savedWebhook = await newWebhook.save();
-    res.status(201).json(savedWebhook);
-  } catch (error) {
-    console.error("Error creating webhook:", error);
-    res.status(500).json({ message: "Error creating webhook" });
-  }
-});
 
 // Route to get all track logs
 router.get("/track-logs", async (req, res) => {
