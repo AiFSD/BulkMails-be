@@ -3,7 +3,6 @@ const { handleSendBulkEmails } = require("../controllers/sendMailController");
 const mailgun = require("mailgun-js");
 const { MAILGUN_API_KEY, MAILGUN_DOMAIN } = require("../utils/config");
 const EmailEvent = require("../models/EmailEvent");
-const Webhook = require("../models/Webhook");
 const multer = require("multer");
 const router = express.Router();
 const mg = mailgun({ apiKey: MAILGUN_API_KEY, domain: MAILGUN_DOMAIN });
